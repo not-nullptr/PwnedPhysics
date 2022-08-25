@@ -1,8 +1,8 @@
-﻿# PwnedPhysics
+# PwnedPhysics
  
- A re-creation of Haubna's joke of a verification API (which still has no-one laughing) 
+A re-creation of Haubna's joke of a verification API (which still has no-one laughing) 
 
-# You're not funny. How do I set this up?
+## You're not funny. How do I set this up?
 
 Well, since you so politely asked, I'll tell you.
 
