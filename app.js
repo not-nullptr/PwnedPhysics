@@ -10,9 +10,11 @@ var app = express();
 const allowedCodes = [
     'sampleCode'
 ]
+const doVerification = false;
 
 app.get('/verify', (req, res) => {
     try {
+        if (!doVerification) return res.status(200).send(`verified`)
         if (allowedCodes.includes(req.query.code)) {
             console.log(`physics mod just verified using code ${req.query.code}`)
             return res.status(200).send(`${req.query.code}verified`) // no space bcs String.contains("abcd " + "verified") returns false in java
