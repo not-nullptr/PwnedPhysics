@@ -8,16 +8,16 @@
 var express = require("express");
 var app = express();
 const allowedCodes = [
-    'oohWeeOhhILookJustLikeBuddyHolly',
-    'ohhOhhAndYoureMaryTylerMoore'
+    'sampleCode'
 ]
 
 app.get('/verify', (req, res) => {
     try {
         if (allowedCodes.includes(req.query.code)) {
-            console.log("verified")
+            console.log(`physics mod just verified using code ${req.query.code}`)
             return res.status(200).send(`${req.query.code}verified`) // no space bcs String.contains("abcd " + "verified") returns false in java
         }
+        console.log(`someone just failed to verify using code ${req.query.code}`)
         return res.status(200).send(`invalid code! valid codes are: [ ${allowedCodes.toString().replace(",", ", ")} ]`) // i don't know why but it always expects 200?? shitty code
     } catch(e) {
         console.log(`failed to verify???? (${e})`) // this should never, EVER happen
