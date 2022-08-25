@@ -8,8 +8,8 @@
 var express = require("express");
 var app = express();
 const allowedCodes = [
-    'haubnaIsATwat',
-    'obfuscateYourCodeLOL'
+    'oohWeeOhhILookJustLikeBuddyHolly',
+    'ohhOhhAndYoureMaryTylerMoore'
 ]
 
 app.get('/verify', (req, res) => {
