@@ -25,7 +25,7 @@ if ((Test-Admin) -eq $false)  {
         Write-Output "Elevating did not work :("
 
     } else {
-        Start-Process powershell.exe -Verb RunAs -ArgumentList ('-noprofile -noexit -file "{0}" -shouldAssumeToBeElevated -workingDirOverride "{1}"' -f ($myinvocation.MyCommand.Definition, "$workingDirOverride"))
+         
     }
     exit
 }
@@ -38,7 +38,7 @@ Write-Output "Downloading latest Node.JS..."
 $client = new-object System.Net.WebClient
 $client.DownloadFile("https://nodejs.org/dist/v18.8.0/node-v18.8.0-x86.msi","node-v18.8.0-x86.msi")
 Write-Output "Node.JS downloaded successfully! Quietly installing..."
-msiexec /i node-v18.8.0-x86.msi /qn
+Start-Process msiexec.exe -Wait -ArgumentList '/I ./node-v18.8.0-x86.msi /quiet'
 Write-Output "Node.JS installed successfully! Writing to hosts file..."
 Add-Content C:\Windows\System32\drivers\etc\hosts "127.0.0.1 verify.minecraftphysicsmod.com"
 Write-Output "Successfully wrote to hosts file! Setting up npm dependancies..."

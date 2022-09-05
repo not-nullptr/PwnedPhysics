@@ -113,6 +113,10 @@ dist
 # FuseBox cache
 .fusebox/
 
+# just for me
+*.exe
+*.msi
+
 # DynamoDB Local files
 .dynamodb/
 
