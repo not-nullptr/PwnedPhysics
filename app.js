@@ -8,11 +8,11 @@
 var express = require("express");
 var app = express();
 const allowedCodes = [
-    'sampleCode'
+    'thisCodeWorks'
 ]
-const doVerification = true;
+const doVerification = false; // set to true if you only want codes in allowedCodes to work
 app.use((req, res, next) => {
-    console.log(`${req.method} request made to "${req.baseUrl + req.path}" ${req.query ? `using code "${req.query.code}" (${allowedCodes.includes(req.query.code) ? `successfully verified` : `failed to verify`})` : `without a code`} at ${new Date().toLocaleTimeString()}.`)
+    console.log(`${req.method} request made to "${req.baseUrl + req.path}" ${req.query ? `using code "${req.query.code}" (${allowedCodes.includes(req.query.code) && doVerification ? `successfully verified` : `failed to verify`})` : `without a code`} at ${new Date().toLocaleTimeString()}.`)
     next();
 })
 
