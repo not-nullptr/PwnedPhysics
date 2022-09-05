@@ -8,13 +8,11 @@
 var express = require("express");
 var app = express();
 const allowedCodes = [
-    'sampleCode',
-    'anotherSampleCode',
-    'verified',
+    'sampleCode'
 ]
 const doVerification = true;
 app.use((req, res, next) => {
-    console.log(`${req.method} request made to "${req.baseUrl + req.path}" ${req.query ? `using code "${req.query.code}"` : `without a code`} at ${new Date().toLocaleTimeString()}.`)
+    console.log(`${req.method} request made to "${req.baseUrl + req.path}" ${req.query ? `using code "${req.query.code}" (${allowedCodes.includes(req.query.code) ? `successfully verified` : `failed to verify`})` : `without a code`} at ${new Date().toLocaleTimeString()}.`)
     next();
 })
 
@@ -28,7 +26,7 @@ app.get('/verify', (req, res) => {
         return res.status(200).send(`Invalid code! Valid codes are ${allowedCodes.toString().replace(/,([^,]*)$/, ' and $1').replace(/,/g, ', ')}.`) // i don't know why but it always expects 200?? shitty code
     } catch(e) {
         console.log(`An error occured while verifying. (${e})`) // this should never, EVER happen
-        return res.status(200).send(`${e}`)
+        return res.status(200).send(`${e.toString().slice(7)}`)
     }
 })
 
