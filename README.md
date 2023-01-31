@@ -4,7 +4,7 @@ A re-creation of Haubna's joke of a verification API (which still has no-one lau
 
 ## WARNING!
 
-Haubna, like the cross-eyed prick they are, have changed the port. You will **need** to go into `app.js`, and change the `oldVersion` variable to true or false, depending if you have a newer version. I'm not sure when they changed the port. You may need to experiment. If you're running the latest version, this needs to be set to true.
+Haubna, like the cross-eyed prick they are, have changed the port. You will **need** to go into `app.js`, and change the `oldVersion` variable to true or false, depending if you have version 105 or later. **If you're running 105 or later, this needs to be set to false.**
 
 ## You're not funny. How do I set this up?
 
