@@ -11,6 +11,7 @@ const allowedCodes = [
     'thisCodeWorks'
 ]
 const doVerification = false; // set to true if you only want codes in allowedCodes to work
+const oldVersion = false;
 app.use((req, res, next) => {
     console.log(`${req.method} request made to "${req.baseUrl + req.path}" ${req.query ? `using code "${req.query.code}" (${allowedCodes.includes(req.query.code) || !doVerification ? `successfully verified` : `failed to verify`})` : `without a code`} at ${new Date().toLocaleTimeString()}.`)
     next();
@@ -30,6 +31,6 @@ app.get('/verify', (req, res) => {
     }
 })
 
-app.listen(4567, () => {
-    console.log(`Listening on port 4567`)
+app.listen(oldVersion ? 4567 : 8080, () => {
+    console.log(`Listening on port ${oldVersion ? 4567 : 8080}`)
 })
