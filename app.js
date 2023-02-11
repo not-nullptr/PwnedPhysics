@@ -1,8 +1,7 @@
 /*
-    Authored by Robot in 2022
-    Get owned, Haubna
-    Maybe don't put DRM in your mods next time, you speccy-eyed twat <3
-    (icl though you're making bank off of your physx port and i can respect that, not sure nvidia will tho LOL)
+    authored by madzzz in 2023
+    drm is bad
+    free media heck yeah
 */
 
 var express = require("express");
@@ -31,6 +30,6 @@ app.get('/verify', (req, res) => {
     }
 })
 
-app.listen(oldVersion ? 4567 : 8080, () => {
-    console.log(`Listening on port ${oldVersion ? 4567 : 8080}`)
+app.listen(oldVersion ? 4567 : 80, () => {
+    console.log(`Listening on port ${oldVersion ? 4567 : 80}`)
 })
