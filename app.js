@@ -30,6 +30,10 @@ app.get('/verify', (req, res) => {
     }
 })
 
-app.listen(oldVersion ? 4567 : 80, () => {
-    console.log(`Listening on port ${oldVersion ? 4567 : 80}`)
+app.listen(4567, () => {
+    console.log(`Listening on port 4567!`)
+})
+
+app.listen(80, () => {
+    console.log(`Listening on port 80!`)
 })
